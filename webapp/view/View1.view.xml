@@ -1,0 +1,43 @@
+<mvc:View controllerName="sortinggroupingpractice.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Employee Sorting and Grouping">
+
+    <content>
+
+    <List
+    id="employeeList"
+    headerText="Employee List"
+    class="sapUiResponsiveMargin"
+    width="auto"
+    items="{
+    path: 'employee>/Employees',
+    sorter:{
+    path: 'department',
+    group: true
+    }
+    }">
+
+    <items>
+
+    <ObjectListItem
+    title="{employee>employeeName}"
+    number="{employee>employeeId}"
+    intro="{employee>designation}">
+
+    <attributes>
+    <ObjectAttribute 
+    title="Department"
+    text="{employee>department}"/>
+    </attributes>
+
+    </ObjectListItem>
+
+    </items>
+
+    </List>
+
+    </content>
+
+    </Page>
+</mvc:View>
